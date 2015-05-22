@@ -51,6 +51,20 @@ window.onmousemove = function(e) {
 }
 
 var items = ['lappy', 'airbnb', 'brown', 'effectivejava', 'bananagrams', 'facebook', 'lobster', 'gameinventors', 'music', 'tripadvisor', 'dannyboy', 'beer'];
+var maxBrightness = {
+  'lappy': .8,
+  'airbnb': .8,
+  'brown': .9,
+  'effectivejava': .7,
+  'bananagrams': .7,
+  'facebook': .85,
+  'lobster': .7,
+  'gameinventors': .7,
+  'music': .7,
+  'tripadvisor': 1,
+  'dannyboy': .7,
+  'beer': 1
+}
 var left = ['brown', 'bananagrams', 'lobster', 'music', 'dannyboy'];
 var flashing = "";
 var flashTime = 0;

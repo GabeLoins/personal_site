@@ -1,4 +1,4 @@
-@media (max-width: 1000px) {
+@media (max-width: 750px) {
   .mobile-container {
     width: 100%;    
   }
@@ -25,7 +25,10 @@
   } 
 }
 
-@media (min-width: 1001px) {
+@media (min-width: 751px) {
+  hr {
+    display: none;
+  }
   .lower {
     position: absolute;
     z-index: 1;
