@@ -13,8 +13,8 @@
     padding: 5px;
   }
   .circle-thumb {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
   } 
 }
