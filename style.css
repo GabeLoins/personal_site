@@ -1,4 +1,4 @@
-@media (max-width: 950px) {
+@media (max-device-width: 950px) {
   .mobile-container {
     width: 100%;    
   }
@@ -25,7 +25,7 @@
   } 
 }
 
-@media (min-width: 951px) {
+@media (min-device-width: 951px) {
   hr {
     display: none;
   }
