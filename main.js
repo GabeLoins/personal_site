@@ -39,12 +39,23 @@ $(document).ready ( function(){
   }, 50);
 });
 
+window.onmousemove = function(e) {
+  if (mouseSide == 'left') {
+    $('.text-back').css({'top': (e.clientY + 5) + 'px', 'left': (e.clientX + 5) + 'px'});
+    $('.flavor-text').css({'top': (e.clientY + 5) + 'px', 'left': (e.clientX + 5) + 'px'});
+  } else {
+    var backWidth = $('.text-back').width();
+    $('.text-back').css({'top': (e.clientY + 5) + 'px', 'left': (e.clientX - backWidth) + 'px'});
+    $('.flavor-text').css({'top': (e.clientY + 5) + 'px', 'left': (e.clientX - backWidth) + 'px'});
+  }
+}
+
 var items = ['lappy', 'airbnb', 'brown', 'effectivejava', 'bananagrams', 'facebook', 'lobster', 'gameinventors', 'music', 'tripadvisor', 'dannyboy', 'beer'];
 var left = ['brown', 'bananagrams', 'lobster', 'music', 'dannyboy'];
 var flashing = "";
 var flashTime = 0;
 var flashHold = false;
-var flashSide = '';
+var mouseSide = 'left';
 
 function start() {
   // hide each item
@@ -87,15 +98,9 @@ function select(element) {
   flashTime = 0;
   flashing = element;
   flashHold = true;
-  if (left.indexOf(element) >= 0) {
-    $('.text-back-right').css({'opacity': '1', '-webkit-animation': 'fadein .33s', '-moz-animation': 'fadein .33s', '-ms-animation': 'fadein .33s', '-o-animation': 'fadein .33s', 'animation': 'fadein .33s'});
-    $('.flavor-right').css({'display': 'inherit', 'opacity': '1', '-webkit-animation': 'fadein .33s', '-moz-animation': 'fadein .33s', '-ms-animation': 'fadein .33s', '-o-animation': 'fadein .33s', 'animation': 'fadein .33s'});
-    flashSide = 'right';
-  } else {
-    $('.text-back-left').css({'opacity': '1', '-webkit-animation': 'fadein .33s', '-moz-animation': 'fadein .33s', '-ms-animation': 'fadein .33s', '-o-animation': 'fadein .33s', 'animation': 'fadein .33s'});
-    $('.flavor-left').css({'display': 'inherit', 'opacity': '1', '-webkit-animation': 'fadein .33s', '-moz-animation': 'fadein .33s', '-ms-animation': 'fadein .33s', '-o-animation': 'fadein .33s', 'animation': 'fadein .33s'});
-    flashSide = 'left';
-  }
+  $('.text-back').css({'opacity': '1', '-webkit-animation': 'fadein .33s', '-moz-animation': 'fadein .33s', '-ms-animation': 'fadein .33s', '-o-animation': 'fadein .33s', 'animation': 'fadein .33s'});
+  $('.flavor-text').css({'opacity': '1', '-webkit-animation': 'fadein .33s', '-moz-animation': 'fadein .33s', '-ms-animation': 'fadein .33s', '-o-animation': 'fadein .33s', 'animation': 'fadein .33s'});
+  mouseSide = left.indexOf(element) > -1 ? 'left' : 'right';
 }
 
 function flicker() {
@@ -122,8 +127,8 @@ function unflash() {
   if (flashing == '') {
     return;
   }
-  $('.text-back-' + flashSide).css({'opacity': '0', '-webkit-animation': 'fadeout .33s', '-moz-animation': 'fadeout .33s', '-ms-animation': 'fadeout .33s', '-o-animation': 'fadeout .33s', 'animation': 'fadeout .33s'});
-  $('.flavor-' + flashSide).css({'display': 'none', 'opacity': '0', '-webkit-animation': 'fadeout .33s', '-moz-animation': 'fadeout .33s', '-ms-animation': 'fadeout .33s', '-o-animation': 'fadeout .33s', 'animation': 'fadeout .33s'});
+  $('.text-back').css({'opacity': '0', '-webkit-animation': 'fadeout .33s', '-moz-animation': 'fadeout .33s', '-ms-animation': 'fadeout .33s', '-o-animation': 'fadeout .33s', 'animation': 'fadeout .33s'});
+  $('.flavor-text').css({'opacity': '0', '-webkit-animation': 'fadeout .33s', '-moz-animation': 'fadeout .33s', '-ms-animation': 'fadeout .33s', '-o-animation': 'fadeout .33s', 'animation': 'fadeout .33s'});
   flashHold = false;
   flashSide = '';
   brightness = 0;
