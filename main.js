@@ -25,18 +25,18 @@ $(document).ready ( function(){
                         window.setTimeout(function() {
                           $("#desk").css('display', 'inherit');
                           start();
-                        }, 30);
-                      }, 12);
-                    }, 12);
-                  }, 12);
-                }, 12);
-              }, 15);
-            }, 20);
-          }, 25);
-        }, 32);
-      }, 35);
-    }, 35);
-  }, 50);
+                        }, 300);
+                      }, 120);
+                    }, 120);
+                  }, 120);
+                }, 120);
+              }, 150);
+            }, 200);
+          }, 250);
+        }, 320);
+      }, 350);
+    }, 350);
+  }, 500);
 });
 
 window.onmousemove = function(e) {
@@ -121,7 +121,7 @@ function start() {
   }); 
   // show welcome
   $('.topper-text').css('display', 'inherit');
-  $('#welcome').fitText(2);
+  $('#welcome').fitText(1.4);
   flickerTimeout = startflicker();
   highlightUpdateTimout = setInterval(watchUpdate, 33);
 }

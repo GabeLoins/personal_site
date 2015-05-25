@@ -186,9 +186,9 @@ body {
 }
 
 .topper-text {
-  left: 41%;
+  left: 43%;
   position: absolute;
-  width:100%;
+  width:52%;
   z-index: 4;
   display:none;
 }
